@@ -1,0 +1,53 @@
+.body {
+  display: grid;
+}
+
+header {
+  text-align: center;
+}
+
+.popup {
+  text-align: center;
+}
+
+.main {
+  display: grid;
+}
+
+input {
+  width: 100px;
+  height: 20px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 200px 500px 200px;
+  padding: 0;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings {
+  width: 200px;
+  height: 500px;
+  background-color: rgb(191, 191, 236);
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  background-color: ghostwhite;
+  margin: 0 auto;
+}
+
+*:hover {
+  outline: 1px solid red;
+}
+
+#eraser {
+  margin-top: 20px;
+}
+
