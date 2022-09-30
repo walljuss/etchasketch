@@ -1,7 +1,7 @@
 let i = 0;
 let total = 0;
 let color='#000000';
-
+let isDown = false;
 
 // const getVal = () => {
 //   let val = document.querySelector('input').value;
@@ -33,10 +33,18 @@ color_el.addEventListener('input', () => {
   color = color_el.value;
   let cell_id = document.querySelectorAll('.cellito');
   cell_id.forEach( element => {
-  element.addEventListener('click', () => {
+  element.addEventListener('mousedown', () => {
     element.style.backgroundColor = color;
+    
   })
+  element.addEventListener('mouseover', () => {
+    if (isDown === true ) {
+      element.style.backgroundColor = color;
+    } 
+  })
+  
 })
+
 })
 
 
@@ -65,12 +73,25 @@ const createNewBoard = (row) => {
   const container = document.querySelector('.container');
   container.style['grid-template-rows'] = `repeat(${row},${100/row}%)`;
   container.style['grid-template-columns'] = `repeat(${row},${100/row}%)`;
-  
+  container.addEventListener('mousedown', () => {
+    isDown = true;
+  })
+  container.addEventListener('mouseup', () => {
+    isDown = false;
+  })
   
   let cell_id = document.querySelectorAll('.cellito');
+  
+
+
   cell_id.forEach( element => {
-  element.addEventListener('click', () => {
+  element.addEventListener('mousedown', () => {
     element.style.backgroundColor = color;
+  })
+  element.addEventListener('mouseover', () => {
+    if (isDown === true ) {
+      element.style.backgroundColor = color;
+    } 
   })
   });
 }
